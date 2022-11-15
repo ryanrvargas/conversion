@@ -14,6 +14,8 @@ def getTsp(unit, num):
             return num * 192
         case "gallon" | "gallons":
             return num * 768
+        case "liter" | "liters":
+            return num * 202.884
             
 def getOzs(unit, num):
     match unit.lower():
@@ -29,5 +31,7 @@ def getOzs(unit, num):
             return num * 32
         case "gallon" | "gallons":
             return num * 123
+        case "liter" | "liters":
+            return num * 33.814
             
 
