@@ -2,105 +2,118 @@
 import sys
 import argparse
 
-def getTsp(unit, num):
+#This function converts other units into Tsp
+def getTsp(unit, nums):
     global num
+    num = nums
     match unit.lower():
         case "ounces" | "oz":
-            num = num * 6
+            num = nums * 6
         case "tbsp":
-            num = num * 3
+            num = nums * 3
         case "cup" | "cups":
-            num = num * 48.6922
+            num = nums * 48.6922
         case "pint" | "pints":
-            num = num * 96
+            num = nums * 96
         case "quart" | "quarts":
-            num = num * 192
+            num = nums * 192
         case "gallon" | "gallons":
-            num = num * 768
+            num = nums * 768
         case "liter" | "liters" | "l":
-            num = num * 202.884
+            num = nums * 202.884
         case "milliliter" | "milliliters" | "ml":
-            num = num / 4.929
-            
-def getTbsp(unit, num):
+            num = nums / 4.929
+#This function converts other units into Tbsp         
+def getTbsp(unit, nums):
     global num
+    num = nums
     match unit.lower():
-        case "ounces" | "oz":s
-            num = num * 2
+        case "ounces" | "oz":
+            num = nums * 2
         case "tsp":
-            num = num / 3
+            num = nums / 3
         case "cup" | "cups":
-            num = num * 16.2307
+            num = nums * 16.2307
         case "pint" | "pints":
-            num = num * 32
+            num = nums * 32
         case "quart" | "quarts":
-            num = num * 64
+            num = nums * 64
         case "gallon" | "gallons":
-            num = num * 256
+            num = nums * 256
         case "liter" | "liters" | "l":
-            num = num * 67.628
+            num = nums * 67.628
         case "milliliter" | "milliliters" | "ml":
-            num = num / 14.787
+            num = nums / 14.787
             
-def getOzs(unit, num):
+#This function converts other units into Ounces           
+def getOzs(unit, nums):
     global num
-    match unit.lower():
-        case "tsp":
-            print(num * .16, "ozs")
-        case "tbsp":
-            num = num * .5
-        case "cup" | "cups":
-            num = num * 8
-        case "pint" | "pints":
-            num = num * 16
-        case "quart" | "quarts":
-            num = num * 32
-        case "gallon" | "gallons":
-            num = num * 123
-        case "liter" | "liters" | "l":
-            num = num * 33.814
-        case "milliliter" | "milliliters" | "ml":
-            num = num / 29.574
-            
-def getCups(unit, num):
-    global num
+    num = nums
     match unit.lower():
         case "tsp":
-            num = num / 48.692
+            num = nums * .16
         case "tbsp":
-            num = num / 16.231
+            num = nums * .5
+        case "cup" | "cups":
+            num = nums * 8
+        case "pint" | "pints":
+            num = nums * 16
+        case "quart" | "quarts":
+            num = nums * 32
+        case "gallon" | "gallons":
+            num = nums * 123
+        case "liter" | "liters" | "l":
+            num = nums * 33.814
+        case "milliliter" | "milliliters" | "ml":
+            num = nums / 29.574
+#This function converts other units into Cups              
+def getCups(unit, nums):
+    global num
+    num = nums
+    match unit.lower():
+        case "tsp":
+            num = nums / 48.692
+        case "tbsp":
+            num = nums / 16.231
         case "ounce" | "ounces":
-            num = num / 8.115
+            num = nums / 8.115
         case "pint" | "pints":
-            num = num * 1.972
+            num = nums * 1.972
         case "quart" | "quarts":
-            num = num * 3.943
+            num = nums * 3.943
         case "gallon" | "gallons":
-            num = num * 15.773
+            num = nums * 15.773
         case "liter" | "liters" | "l":
-            num =num * 4.167
+            num = nums * 4.167
         case "milliliter" | "milliliters" | "ml":
-            num = num / 260
-
-def getPints(unit, num):
+            num = nums / 260
+#This function converts other units into Pints
+def getPints(unit, nums):
     global num
+    num = nums
     match unit.lower():
         case "tsp":
-            num = num / 48.692
+            num = nums / 48.692
         case "tbsp":
-            num = num / 16.231
+            num = nums / 16.231
         case "ounce" | "ounces":
-            num = num / 8.115
+            num = nums / 8.115
         case "pint" | "pints":
-            num = num * 1.972
+            num = nums * 1.972
         case "quart" | "quarts":
-            num = num * 3.943
+            num = nums * 3.943
         case "gallon" | "gallons":
-            num = num * 15.773
+            num = nums * 15.773
         case "liter" | "liters" | "l":
-            num = num * 4.167
+            num = nums * 4.167
         case "milliliter" | "milliliters" | "ml":
-            num = num / 473.2
+            num = nums / 473.2
+#This is just a test. Nothing here is needed
+unit = "ounces"
+amount = 16
+#i want to convert Ozs to tsp
+getTsp(unit, amount)
+print(str(num) + Teaspoons)
 # Main block
 """
 if __name__ == '__main__':
