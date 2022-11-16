@@ -121,6 +121,30 @@ def getPints(unit, nums):
         case _:
             print("Inproper input")
             
+#This function converts other units into Quarts.
+def getQuarts(unit, nums):
+    global num
+    num = nums
+    match unit.lower():
+        case "tsp":
+            num = nums / 192
+        case "tbsp":
+            num = nums / 64
+        case "ounce" | "ounces":
+            num = nums / 32
+        case "cup" | "cups":
+            num = nums / 3.943
+        case "pint" | "pints":
+            num = nums / 2
+        case "gallon" | "gallons":
+            num = nums * 4
+        case "liter" | "liters" | "l":
+            num = nums * 1.057
+        case "milliliter" | "milliliters" | "ml":
+            num = nums / 946.4
+        case _:
+            print("Inproper input")
+            
 #This is just a test. Nothing here is needed
 unit = "ounces"
 amount = 16
