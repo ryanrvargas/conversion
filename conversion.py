@@ -3,81 +3,104 @@ import sys
 import argparse
 
 def getTsp(unit, num):
+    global num
     match unit.lower():
         case "ounces" | "oz":
-            return num * 6
+            num = num * 6
         case "tbsp":
-            return num * 3
+            num = num * 3
         case "cup" | "cups":
-            return num * 48.6922
+            num = num * 48.6922
         case "pint" | "pints":
-            return num * 96
+            num = num * 96
         case "quart" | "quarts":
-            return num * 192
+            num = num * 192
         case "gallon" | "gallons":
-            return num * 768
+            num = num * 768
         case "liter" | "liters" | "l":
-            return num * 202.884
+            num = num * 202.884
         case "milliliter" | "milliliters" | "ml":
-            return num / 4.929
+            num = num / 4.929
             
 def getTbsp(unit, num):
+    global num
     match unit.lower():
         case "ounces" | "oz":s
-            return num * 2
+            num = num * 2
         case "tsp":
-            return num / 3
+            num = num / 3
         case "cup" | "cups":
-            return num * 16.2307
+            num = num * 16.2307
         case "pint" | "pints":
-            return num * 32
+            num = num * 32
         case "quart" | "quarts":
-            return num * 64
+            num = num * 64
         case "gallon" | "gallons":
-            return num * 256
+            num = num * 256
         case "liter" | "liters" | "l":
-            return num * 67.628
+            num = num * 67.628
         case "milliliter" | "milliliters" | "ml":
-            return num / 14.787
+            num = num / 14.787
+            
 def getOzs(unit, num):
+    global num
     match unit.lower():
         case "tsp":
             print(num * .16, "ozs")
         case "tbsp":
-            return num * .5
+            num = num * .5
         case "cup" | "cups":
-            return num * 8
+            num = num * 8
         case "pint" | "pints":
-            return num * 16
+            num = num * 16
         case "quart" | "quarts":
-            return num * 32
+            num = num * 32
         case "gallon" | "gallons":
-            return num * 123
+            num = num * 123
         case "liter" | "liters" | "l":
-            return num * 33.814
+            num = num * 33.814
         case "milliliter" | "milliliters" | "ml":
-            return num / 29.574
+            num = num / 29.574
             
 def getCups(unit, num):
+    global num
     match unit.lower():
         case "tsp":
-            return num / 48.692
+            num = num / 48.692
         case "tbsp":
-            return num / 16.231
+            num = num / 16.231
         case "ounce" | "ounces":
-            return num / 8.115
+            num = num / 8.115
         case "pint" | "pints":
-            return num * 1.972
+            num = num * 1.972
         case "quart" | "quarts":
-            return num * 3.943
+            num = num * 3.943
         case "gallon" | "gallons":
-            return num * 15.773
+            num = num * 15.773
         case "liter" | "liters" | "l":
-            return num * 4.167
+            num =num * 4.167
         case "milliliter" | "milliliters" | "ml":
-            return num / 260
+            num = num / 260
 
-
+def getPints(unit, num):
+    global num
+    match unit.lower():
+        case "tsp":
+            num = num / 48.692
+        case "tbsp":
+            num = num / 16.231
+        case "ounce" | "ounces":
+            num = num / 8.115
+        case "pint" | "pints":
+            num = num * 1.972
+        case "quart" | "quarts":
+            num = num * 3.943
+        case "gallon" | "gallons":
+            num = num * 15.773
+        case "liter" | "liters" | "l":
+            num = num * 4.167
+        case "milliliter" | "milliliters" | "ml":
+            num = num / 473.2
 # Main block
 """
 if __name__ == '__main__':
