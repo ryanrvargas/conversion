@@ -2,9 +2,9 @@
 import sys
 import argparse
 
-'''def getTsp(unit, num):
+def getTsp(unit, num):
     match unit.lower():
-        case "ounces" | "oz":s
+        case "ounces" | "oz":
             return num * 6
         case "tbsp":
             return num * 3
@@ -39,7 +39,25 @@ def getTbsp(unit, num):
             return num * 67.628
         case "milliliter" | "milliliters" | "ml":
             return num / 14.787
-
+def getOzs(unit, num):
+    match unit.lower():
+        case "tsp":
+            print(num * .16, "ozs")
+        case "tbsp":
+            return num * .5
+        case "cup" | "cups":
+            return num * 8
+        case "pint" | "pints":
+            return num * 16
+        case "quart" | "quarts":
+            return num * 32
+        case "gallon" | "gallons":
+            return num * 123
+        case "liter" | "liters" | "l":
+            return num * 33.814
+        case "milliliter" | "milliliters" | "ml":
+            return num / 29.574
+            
 def getCups(unit, num):
     match unit.lower():
         case "tsp":
@@ -59,26 +77,9 @@ def getCups(unit, num):
         case "milliliter" | "milliliters" | "ml":
             return num / 260
 
-def getOzs(unit, num):
-    match unit.lower():
-        case "tsp":s
-            return num * .16
-        case "tbsp":
-            return num * .5
-        case "cup" | "cups":
-            return num * 8
-        case "pint" | "pints":
-            return num * 16
-        case "quart" | "quarts":
-            return num * 32
-        case "gallon" | "gallons":
-            return num * 123
-        case "liter" | "liters" | "l":
-            return num * 33.814
-        case "milliliter" | "milliliters" | "ml":
-            return num / 29.574'''
 
 # Main block
+"""
 if __name__ == '__main__':
     parser = parser = argparse.ArgumentParser()
     parser.add_argument("num1", help="first number as int or float", type=float)
@@ -91,3 +92,4 @@ if __name__ == '__main__':
     var1 = args.num1
     var1 = float(args.num1)
     print(f'Converting {args.num1}{args.unit_from} {args.operation} {args.unit_to}. Please wait....')
+"""
