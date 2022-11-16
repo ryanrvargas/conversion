@@ -126,7 +126,7 @@ unit = "ounces"
 amount = 16
 #i want to convert Ozs to tsp
 getTsp(unit, amount)
-print(str(num) + Teaspoons)
+print(str(num) + "Teaspoons")
 # Main block
 """
 if __name__ == '__main__':
