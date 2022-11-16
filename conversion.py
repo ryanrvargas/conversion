@@ -1,5 +1,6 @@
 #github.com/ryanrvargas
 import sys
+import argparse
 
 '''def getTsp(unit, num):
     match unit.lower():
@@ -79,16 +80,14 @@ def getOzs(unit, num):
 
 # Main block
 if __name__ == '__main__':
-    try:
-      
-        args = sys.argv
-        
-        if(args[1] == int or float):
-            pass
-        if(args[2] == "oz"):
-            print("Working in ounces")
-                    
-        else:
-            globals()[args[1]](*args[2:])
-    finally:
-            pass
+    parser = parser = argparse.ArgumentParser()
+    parser.add_argument("num1", help="first number as int or float", type=float)
+    parser.add_argument("unit_from", help="unit of measure that you want to convert")
+    parser.add_argument("operation", help=" to ")
+    parser.add_argument(u"unit_to", help="unit of measure that you want")
+    
+    args = parser.parse_args()
+    
+    var1 = args.num1
+    var1 = float(args.num1)
+    print(f'Converting {args.num1}{args.unit_from} {args.operation} {args.unit_to}. Please wait....')
