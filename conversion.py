@@ -23,6 +23,8 @@ def getTsp(unit, nums):
             num = nums * 202.884
         case "milliliter" | "milliliters" | "ml":
             num = nums / 4.929
+        case _:
+            print("Inproper input")
 #This function converts other units into Tbsp         
 def getTbsp(unit, nums):
     global num
@@ -44,6 +46,8 @@ def getTbsp(unit, nums):
             num = nums * 67.628
         case "milliliter" | "milliliters" | "ml":
             num = nums / 14.787
+        case _:
+            print("Inproper input")
             
 #This function converts other units into Ounces           
 def getOzs(unit, nums):
@@ -66,6 +70,9 @@ def getOzs(unit, nums):
             num = nums * 33.814
         case "milliliter" | "milliliters" | "ml":
             num = nums / 29.574
+        case _:
+            print("Inproper input")
+            
 #This function converts other units into Cups              
 def getCups(unit, nums):
     global num
@@ -87,6 +94,8 @@ def getCups(unit, nums):
             num = nums * 4.167
         case "milliliter" | "milliliters" | "ml":
             num = nums / 260
+        case _:
+            print("Inproper input")
             
 #This function converts other units into Pints
 def getPints(unit, nums):
@@ -109,6 +118,9 @@ def getPints(unit, nums):
             num = nums * 2.113
         case "milliliter" | "milliliters" | "ml":
             num = nums / 473.2
+        case _:
+            print("Inproper input")
+            
 #This is just a test. Nothing here is needed
 unit = "ounces"
 amount = 16
