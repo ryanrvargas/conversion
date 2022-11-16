@@ -87,25 +87,26 @@ def getCups(unit, nums):
             num = nums * 4.167
         case "milliliter" | "milliliters" | "ml":
             num = nums / 260
+            
 #This function converts other units into Pints
 def getPints(unit, nums):
     global num
     num = nums
     match unit.lower():
         case "tsp":
-            num = nums / 48.692
+            num = nums / 96
         case "tbsp":
-            num = nums / 16.231
+            num = nums / 32
         case "ounce" | "ounces":
-            num = nums / 8.115
-        case "pint" | "pints":
-            num = nums * 1.972
+            num = nums / 16
+        case "cup" | "cups":
+            num = nums / 1.972
         case "quart" | "quarts":
-            num = nums * 3.943
+            num = nums / 2
         case "gallon" | "gallons":
-            num = nums * 15.773
+            num = nums * 8
         case "liter" | "liters" | "l":
-            num = nums * 4.167
+            num = nums * 2.113
         case "milliliter" | "milliliters" | "ml":
             num = nums / 473.2
 #This is just a test. Nothing here is needed
