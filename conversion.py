@@ -152,18 +152,24 @@ amount = 16
 getTsp(unit, amount)
 print(str(num) + "Teaspoons")
 # Main block
-"""
+
 if __name__ == '__main__':
     parser = parser = argparse.ArgumentParser()
     parser.add_argument("num1", help="first number as int or float", type=float)
     parser.add_argument("unit_from", help="unit of measure that you want to convert")
     parser.add_argument("operation", help=" to ")
     parser.add_argument(u"unit_to", help="unit of measure that you want")
-    
+
     args = parser.parse_args()
-    
+
     var1 = args.num1
     var1 = float(args.num1)
-    print(f'Converting {args.num1}{args.unit_from} {args.operation} {args.unit_to}. Please wait....')
-"""
-#add test comment
+    print(f'Converting {args.num1} {args.unit_from} {args.operation} {args.unit_to}. Please wait....')
+
+    if args.unit_to == "tsp" or "teaspoons" or "teaspoon":
+        result = getTsp (args.unit_from, args.num1)
+        print(result)
+
+    elif args.unit_to == "ounces":
+        result = getTsp (args.unit_from, args.num1)
+        print(result)
