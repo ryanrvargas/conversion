@@ -145,6 +145,30 @@ def getQuarts(unit, nums):
         case _:
             print("Inproper input")
             
+#This function converts other units into Gallons.
+def getGallons(unit, nums):
+    global num
+    num = nums
+    match unit.lower():
+        case "tsp":
+            num = nums / 768
+        case "tbsp":
+            num = nums / 256
+        case "ounce" | "ounces":
+            num = nums / 128
+        case "cup" | "cups":
+            num = nums / 15.772
+        case "pint" | "pints":
+            num = nums / 8
+        case "quart" | "quarts":
+            num = nums / 4
+        case "liter" | "liters" | "l":
+            num = nums / 3.785
+        case "milliliter" | "milliliters" | "ml":
+            num = nums / 3785
+        case _:
+            print("Inproper input")
+            
 #This is just a test. Nothing here is needed
 unit = "ounces"
 amount = 16
