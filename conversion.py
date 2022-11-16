@@ -5,7 +5,7 @@ import argparse
 #This function converts other units into Tsp
 def getTsp(unit, num):
     match unit.lower():
-        case "ounces" | "oz": return num /  6
+        case "ounces" | "oz": return num *  6
         case "tbsp": return num * 3
         case "cup" | "cups": return num * 48.6922
         case "pint" | "pints": return num * 96
