@@ -1,6 +1,7 @@
 #github.com/ryanrvargas
+import sys
 
-def getTsp(unit, num):
+'''def getTsp(unit, num):
     match unit.lower():
         case "ounces" | "oz":s
             return num * 6
@@ -74,5 +75,20 @@ def getOzs(unit, num):
         case "liter" | "liters" | "l":
             return num * 33.814
         case "milliliter" | "milliliters" | "ml":
-            return num / 29.574
+            return num / 29.574'''
 
+# Main block
+if __name__ == '__main__':
+    try:
+      
+        args = sys.argv
+        
+        if(args[1] == int or float):
+            pass
+        if(args[2] == "oz"):
+            print("Working in ounces")
+                    
+        else:
+            globals()[args[1]](*args[2:])
+    finally:
+            pass
