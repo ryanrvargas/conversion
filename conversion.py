@@ -37,7 +37,26 @@ def getTbsp(unit, num):
             return num * 67.628
         case "milliliter" | "milliliters" | "ml":
             return num / 14.787
-            
+
+def getCups(unit, num):
+    match unit.lower():
+        case "tsp":
+            return num / 48.692
+        case "tbsp":
+            return num / 16.231
+        case "ounce" | "ounces":
+            return num / 8.115
+        case "pint" | "pints":
+            return num * 1.972
+        case "quart" | "quarts":
+            return num * 3.943
+        case "gallon" | "gallons":
+            return num * 15.773
+        case "liter" | "liters" | "l":
+            return num * 4.167
+        case "milliliter" | "milliliters" | "ml":
+            return num / 260
+
 def getOzs(unit, num):
     match unit.lower():
         case "tsp":s
