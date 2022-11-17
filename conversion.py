@@ -189,7 +189,7 @@ def getMiles(unit, num):
         case "kilometer" | "kilometers" | "km": return num / 1.609
 
 #This function converts other units to Micrometer. 
-def getMicrometer(unit, num):
+def getMicrometers(unit, num):
     match unit.lower():
         case "inch" | "inches" | "in": return num * 25400
         case "feet" | "feetss" | "ft": return num * 304800
@@ -201,7 +201,7 @@ def getMicrometer(unit, num):
         case "kilometer" | "kilometers" | "km": return num * 1e+9
 
 #This function converts other units to Millimeter. 
-def getMillimeter(unit, num):
+def getMillimeters(unit, num):
     match unit.lower():
         case "inch" | "inches" | "in": return num * 25.4
         case "feet" | "feetss" | "ft": return num * 304.8
@@ -211,6 +211,18 @@ def getMillimeter(unit, num):
         case "centimeter" | "centimeters" | "cm": return num * 10
         case "meter" | "meters" | "m": return num * 1000
         case "kilometer" | "kilometers" | "km": return num * 1e+6
+        
+#This function converts other units to Centimeters. 
+def getCentimeters(unit, num):
+    match unit.lower():
+        case "inch" | "inches" | "in": return num * 2.54
+        case "feet" | "feets" | "ft": return num * 30.48
+        case "yard" | "yards" | "yd": return num * 91.44
+        case "mile" | "miles": return num * 160900
+        case "micrometer" | "micrometers": return num / 10000
+        case "millimeter" | "millimeters" | "mm": return num / 10
+        case "meter" | "meters" | "m": return num * 100
+        case "kilometer" | "kilometers" | "km": return num * 100000
 
 #The following remarks are for future additions
     
