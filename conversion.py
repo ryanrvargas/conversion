@@ -93,6 +93,12 @@ def getC(unit, num):
         case "kelvin" | "Kelvin" | "K" | "k": return num - 273.15
         case "fahrenheit" | "Fahrenheit" | "F" | "f": return 5/9 * ((num)-32)
         case _: print("Improper input")
+        
+def getK(unit, num):
+    match unit.lower():
+        case "celcius" | "Celcius" | "C" | "c": return num + 273.15
+        case "fahrenheit" | "Fahrenheit" | "F" | "f": return ((num)-32) * 5/9 + 273.15
+        case _: print("Improper input")
 
 
 # Main block
@@ -157,5 +163,11 @@ if __name__ == '__main__':
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
 
+    elif args.unit_to == "K": # add variables to dict
+        result = getK (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+    
     else:
         print("Not a valid conversion")
