@@ -120,7 +120,15 @@ def getDuck(unit, num):
     #This function converts other units to centimeters
     #This function converts other units to millometer
     #This function converts other units to natutical miles
-
+    #liters
+    #mL
+    #fl oz
+    #cu
+    #ton
+    #metric ton
+    #short ton
+    #acre/hectare/ sqmi
+    
 # Main block
 if __name__ == '__main__':
     parser = parser = argparse.ArgumentParser()
