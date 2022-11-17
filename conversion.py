@@ -30,7 +30,7 @@ def getTbsp(unit, num):
         case "milliliter" | "milliliters" | "ml": return num / 14.787
         case _: print("Inproper input")
 
-#This function converts other units into Ounces           
+#This function converts other units into Ounces. Fluid Ounces         
 def getOzs(unit, num):
     match unit.lower():
         case "tsp": return num * .16
