@@ -143,13 +143,13 @@ if __name__ == '__main__':
     var1 = float(args.num1)
     print(f'Converting {args.num1} {args.unit_from} {args.operation} {args.unit_to}. Please wait....\n')
 
-    if args.unit_to in ['Teaspoon', 'Teaspoons', 'teaspoons', 'teaspoon', 'Tsps', 'tsps', 'Tsp', 'tsp', 'tsps', 'Tsp.', 'tsp.']
+    if args.unit_to in ['Teaspoon', 'Teaspoons', 'teaspoons', 'teaspoon', 'Tsps', 'tsps', 'Tsp', 'tsp', 'tsps', 'Tsp.', 'tsp.']:
         result = getTsp(args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
 
-    elif args.unit_to in ['Tablespoon', 'Tablespoons', 'tablespoon', 'tablespoons', 'Tbsps', 'tbsps', 'Tbsp.', 'tbsp.', 'Tbs', 'tbs']
+    elif args.unit_to in ['Tablespoon', 'Tablespoons', 'tablespoon', 'tablespoons', 'Tbsps', 'tbsps', 'Tbsp.', 'tbsp', 'tbsp.', 'Tbs', 'tbs']:
         result = getTbsp(args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
@@ -179,13 +179,13 @@ if __name__ == '__main__':
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
         
-    elif args.unit_to in ['F', 'f', 'fehrenheit', 'Fehrenheit', 'degF']:
+    elif args.unit_to in ['F', 'f', 'fehrenheit', 'Fehrenheit']:
         result = getF (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
         
-    elif args.unit_to in ['Celcius', 'celcius', 'C', 'c', 'degC']:
+    elif args.unit_to in ['Celcius', 'celcius', 'C', 'c']:
         result = getC (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
