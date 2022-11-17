@@ -284,9 +284,6 @@ def getKilometers(unit, num):
         case _: print("Improper input")
 
 #The following remarks are for future additions
-    
-    #This function converts other units to milligrams
-    #This function converts other units to kilograms
     #This function converts other units to natutical miles
     #liters
     #mL
