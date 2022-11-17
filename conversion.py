@@ -81,6 +81,16 @@ def getQuarts(unit, num):
         case "liter" | "liters" | "l": return num * 1.057
         case "milliliter" | "milliliters" | "ml": return num / 946.4
         case _: print("Inproper input")
+
+#This function converts other units to ounces
+def getOunces(unit, num):
+    match unit.lower():
+        case "pounds" | "lbs" | "pound": return num * 16 
+        case "stone": return num * 224
+        case "microgram" | "micrograms": return num / 2.835e+7
+        case "milligram" | "ml" | "milligrams": return num / 28350
+        case "gram" | "g" | "grams": return num / 28.35
+        case "kl" | "kilogram" | "kilograms": return num * 35.274
         
 #This function converts other units to degrees Fahrenheit        
 def getF(unit, num):
