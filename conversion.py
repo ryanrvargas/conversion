@@ -87,6 +87,12 @@ def getF(unit, num):
         case "kelvin" | "Kelvin" | "K" | "k": return (num - 273.15) * 9/5 + 32
         case "Celcius" | "celcius" | "C" | "c": return (num * 1.8) + 32
         case _: print("Improper input")
+        
+def getC(unit, num):
+    match unit.lower():
+        case "kelvin" | "Kelvin" | "K" | "k": return num - 273.15
+        case "fahrenheit" | "Fahrenheit" | "F" | "f": return 5/9 * ((num)-32)
+        case _: print("Improper input")
 
 
 # Main block
@@ -141,6 +147,12 @@ if __name__ == '__main__':
         
     elif args.unit_to == "F": # add variables to dict
         result = getF (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+        
+    elif args.unit_to == "C": # add variables to dict
+        result = getC (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
