@@ -140,6 +140,17 @@ def getGrams(unit, num):
         case "ounces" | "Ounces" | "oz" | "ozs" | "oz.": return num * 28.35
         case _: print("Improper input")
         
+#This function converts other units to Inches.        
+def getInches(unit, num):
+    match unit.lower():
+        case "foot" | "feet" | "ft": return num * 12 
+        case "yard" | "yards" | "yd": return num * 36
+        case "mile" | "miles" | "mi": return num * 63360
+        case "micrometer" | "micrometers": return num / 25400
+        case "millimeter" | "millimeters" | "mm": return num / 25.4
+        case "centimeter" | "centimeters" | "cm": return num / 2.54
+        case "meter" | "meters" | "m": return num * 39.37
+        case "kilometer" | "kilometers" | "km": return num * 39370      
         
 
 #The following remarks are for future additions
