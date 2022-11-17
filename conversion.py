@@ -107,6 +107,17 @@ def getK(unit, num):
 def getDuck(unit, num):
     match unit.lower():
         case "horsepower" | "Horsepower" | "HP" | "hp": return num * 131.2
+        
+#This function converts other units to grams        
+def getGrams(unit, num):
+    match unit.lower():
+        case "milligrams" | "milligram" | "Milligrams" | "Milligram" | "mg": return num / 1000
+        case "kilograms" | "kilogram" | "Kilograms" | "kilograms" | "kg": return num * 1000
+        case "pounds" | "lbs" | "lb" | "pound": return num * 453.6
+        case "ounces" | "Ounces" | "oz" | "ozs" | "oz.": return num * 28.35
+        case _: print("Improper input")
+        
+        
 
 #The following remarks are for future additions
     #This function converts other units to grams
@@ -199,6 +210,12 @@ if __name__ == '__main__':
     
     elif args.unit_to in ['DP', 'dp', 'duckpower', 'Duckpower']:
         result = getDuck (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+        
+    elif args.unit_to in ['grams', 'gram', 'Grams', 'grams', 'g', 'gm', 'gm.']:
+        result = getGrams (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
