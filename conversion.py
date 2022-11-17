@@ -143,61 +143,61 @@ if __name__ == '__main__':
     var1 = float(args.num1)
     print(f'Converting {args.num1} {args.unit_from} {args.operation} {args.unit_to}. Please wait....\n')
 
-    if args.unit_to == "tsp":# add variables to dict
+    if args.unit_to in ['Teaspoon', 'Teaspoons', 'teaspoons', 'teaspoon', 'Tsps', 'tsps', 'Tsp', 'tsp', 'tsps', 'Tsp.', 'tsp.']
         result = getTsp(args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
 
-    elif args.unit_to == "tbsp":# add variables to dict
+    elif args.unit_to in ['Tablespoon', 'Tablespoons', 'tablespoon', 'tablespoons', 'Tbsps', 'tbsps', 'Tbsp.', 'tbsp.', 'Tbs', 'tbs']
         result = getTbsp(args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
 
-    elif args.unit_to == "oz": # add variables to dict
+    elif args.unit_to in ['Ounces', 'ounces', 'oz.', 'oz']:
         result = getOzs(args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
 
-    elif args.unit_to == "cups": # add variables to dict
+    elif args.unit_to in ['Cups', 'cups', 'Cup', 'cup', 'C.', 'c.']:
         result = getCups (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
 
-    elif args.unit_to == "pints": # add variables to dict
+    elif args.unit_to in ['Pints', 'pints', 'Pint', 'pint', 'Pt', 'PT']:
         result = getPints (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
 
-    elif args.unit_to == "quarts": # add variables to dict
+    elif args.unit_to in ['Qt', 'Qts', 'qt', 'qts', 'Quart', 'Quarts', 'quart', 'quarts' 'qt.']:
         result = getQuarts (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
         
-    elif args.unit_to == "F": # add variables to dict
+    elif args.unit_to in ['F', 'f', 'fehrenheit', 'Fehrenheit', 'degF']:
         result = getF (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
         
-    elif args.unit_to == "C": # add variables to dict
+    elif args.unit_to in ['Celcius', 'celcius', 'C', 'c', 'degC']:
         result = getC (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
 
-    elif args.unit_to == "K": # add variables to dict
+    elif args.unit_to in ['K', 'k', 'Kelvin', 'kelvin', 'degK']:
         result = getK (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
     
-    elif args.unit_to == "dp": # add variables to dict
+    elif args.unit_to in ['DP', 'dp', 'duckpower', 'Duckpower']:
         result = getDuck (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
