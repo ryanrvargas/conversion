@@ -134,10 +134,10 @@ def getDuck(unit, num):
 #This function converts other units to grams        
 def getGrams(unit, num):
     match unit.lower():
-        case "milligrams" | "milligram" | "Milligrams" | "Milligram" | "mg": return num / 1000
-        case "kilograms" | "kilogram" | "Kilograms" | "kilograms" | "kg": return num * 1000
+        case "kilograms" | "kilogram" | "kg": return num * 1000
+        case "milligrams" | "milligram" | "mg": return num / 1000
         case "pounds" | "lbs" | "lb" | "pound": return num * 453.6
-        case "ounces" | "Ounces" | "oz" | "ozs" | "oz.": return num * 28.35
+        case "ounces" | "ounces" | "oz" | "ozs" | "oz.": return num * 28.35
         case _: print("Improper input")
         
 #This function converts other units to Inches.        
