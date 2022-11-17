@@ -156,7 +156,16 @@ def getGrams(unit, num):
         case "pounds" | "lbs" | "lb" | "pound": return num * 453.6
         case "ounces" | "ounces" | "oz" | "ozs" | "oz.": return num * 28.35
         case _: print("Improper input")
-        
+
+#This function converts other units to grams        
+def getKilograms(unit, num):
+    match unit.lower():
+        case "gram" | "grams" | "g": return num / 1000
+        case "milligrams" | "milligram" | "mg": return num / 1e+6
+        case "pounds" | "lbs" | "lb" | "pound": return num / 2.205
+        case "ounces" | "ounces" | "oz" | "ozs" | "oz.": return num / 35.274
+        case _: print("Improper input")
+
 #This function converts other units to Inches.        
 def getInches(unit, num):
     match unit.lower():
