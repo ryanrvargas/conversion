@@ -1,11 +1,13 @@
 #github.com/ryanrvargas
 import sys
 import argparse
+import decimal
+from rich import print as rprint
 
 #This function converts other units into Tsp
 def getTsp(unit, num):
     match unit.lower():
-        case "ounces" | "oz": return num *  6
+        case "ounces" | "oz": return num /  6
         case "tbsp": return num * 3
         case "cup" | "cups": return num * 48.6922
         case "pint" | "pints": return num * 96
@@ -80,14 +82,8 @@ def getQuarts(unit, num):
         case "milliliter" | "milliliters" | "ml": return num / 946.4
         case _: print("Inproper input")
 
-'''#This is just a test. Nothing here is needed
-unit = "ounces"
-amount = 16
-#i want to convert Ozs to tsp
-getTsp(unit, amount)
-print(str(num) + "Teaspoons")'''
-# Main block
 
+# Main block
 if __name__ == '__main__':
     parser = parser = argparse.ArgumentParser()
     parser.add_argument("num1", help="first number as int or float", type=float)
@@ -99,31 +95,43 @@ if __name__ == '__main__':
 
     var1 = args.num1
     var1 = float(args.num1)
-    print(f'Converting {args.num1} {args.unit_from} {args.operation} {args.unit_to}. Please wait....')
+    print(f'Converting {args.num1} {args.unit_from} {args.operation} {args.unit_to}. Please wait....\n')
 
     if args.unit_to == "tsp":# add variables to dict
         result = getTsp(args.unit_from, args.num1)
-        print(result)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
 
     elif args.unit_to == "tbsp":# add variables to dict
         result = getTbsp(args.unit_from, args.num1)
-        print(result)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
 
     elif args.unit_to == "oz": # add variables to dict
         result = getOzs(args.unit_from, args.num1)
-        print(result)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
 
     elif args.unit_to == "cups": # add variables to dict
         result = getCups (args.unit_from, args.num1)
-        print(result)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
 
     elif args.unit_to == "pints": # add variables to dict
         result = getPints (args.unit_from, args.num1)
-        print(result)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
 
     elif args.unit_to == "quarts": # add variables to dict
         result = getQuarts (args.unit_from, args.num1)
-        print(result)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
 
     else:
         print("Not a valid conversion")
