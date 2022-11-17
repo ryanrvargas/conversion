@@ -239,14 +239,14 @@ def getMeters(unit, num):
 #This function converts other units to Meters. 
 def getKilometers(unit, num):
     match unit.lower():
-        case "inch" | "inches" | "in": return num / 39.37
-        case "feet" | "feets" | "ft": return num / 3.281
-        case "yard" | "yards" | "yd": return num / 1.094
-        case "mile" | "miles": return num * 1609
-        case "micrometer" | "micrometers": return num / 1e+6
-        case "millimeter" | "millimeters" | "mm": return num / 1000
-        case "centimeter" | "centimeters" | "cm": return num / 100
-        case "meter" | "meters" | "m": return num * 1000
+        case "inch" | "inches" | "in": return num / 39370
+        case "feet" | "feets" | "ft": return num / 3281
+        case "yard" | "yards" | "yd": return num / 1094
+        case "mile" | "miles": return num * 1.609
+        case "micrometer" | "micrometers": return num / 1e+9
+        case "millimeter" | "millimeters" | "mm": return num / 1e+6
+        case "centimeter" | "centimeters" | "cm": return num / 100000
+        case "meter" | "meters" | "m": return num / 1000
 
 #The following remarks are for future additions
     
