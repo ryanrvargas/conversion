@@ -252,13 +252,6 @@ def getKilometers(unit, num):
     
     #This function converts other units to milligrams
     #This function converts other units to kilograms
-    #This function converts other units to miles
-    #This function converts other units to feet
-    #This function converts other units to inches
-    #This function converts other units to kilometers
-    #This function converts other units to meters
-    #This function converts other units to centimeters
-    #This function converts other units to millometer
     #This function converts other units to natutical miles
     #liters
     #mL
