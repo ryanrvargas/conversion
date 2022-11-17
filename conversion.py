@@ -151,7 +151,18 @@ def getInches(unit, num):
         case "centimeter" | "centimeters" | "cm": return num / 2.54
         case "meter" | "meters" | "m": return num * 39.37
         case "kilometer" | "kilometers" | "km": return num * 39370      
-        
+
+#This function converts other units to Feet.        
+def getFeet(unit, num):
+    match unit.lower():
+        case "inch" | "inches" | "in": return num / 12 
+        case "yard" | "yards" | "yd": return num * 3
+        case "mile" | "miles" | "mi": return num * 5280
+        case "micrometer" | "micrometers": return num / 304800
+        case "millimeter" | "millimeters" | "mm": return num / 304.8
+        case "centimeter" | "centimeters" | "cm": return num / 30.48
+        case "meter" | "meters" | "m": return num * 3.281
+        case "kilometer" | "kilometers" | "km": return num * 3281  
 
 #The following remarks are for future additions
     
