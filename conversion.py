@@ -164,6 +164,18 @@ def getFeet(unit, num):
         case "meter" | "meters" | "m": return num * 3.281
         case "kilometer" | "kilometers" | "km": return num * 3281  
 
+#This function converts other units to Yards.        
+def getYard(unit, num):
+    match unit.lower():
+        case "inch" | "inches" | "in": return num / 36
+        case "feet" | "feetss" | "ft": return num / 3
+        case "mile" | "miles" | "mi": return num * 1760
+        case "micrometer" | "micrometers": return num / 914400
+        case "millimeter" | "millimeters" | "mm": return num / 914.4
+        case "centimeter" | "centimeters" | "cm": return num / 91.44
+        case "meter" | "meters" | "m": return num * 1.094
+        case "kilometer" | "kilometers" | "km": return num * 1094  
+        
 #The following remarks are for future additions
     
     #This function converts other units to milligrams
