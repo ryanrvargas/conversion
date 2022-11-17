@@ -223,6 +223,30 @@ def getCentimeters(unit, num):
         case "millimeter" | "millimeters" | "mm": return num / 10
         case "meter" | "meters" | "m": return num * 100
         case "kilometer" | "kilometers" | "km": return num * 100000
+        
+#This function converts other units to Meters. 
+def getMeters(unit, num):
+    match unit.lower():
+        case "inch" | "inches" | "in": return num / 39.37
+        case "feet" | "feets" | "ft": return num / 3.281
+        case "yard" | "yards" | "yd": return num / 1.094
+        case "mile" | "miles": return num * 1609
+        case "micrometer" | "micrometers": return num / 1e+6
+        case "millimeter" | "millimeters" | "mm": return num / 1000
+        case "centimeter" | "centimeters" | "cm": return num / 100
+        case "kilometer" | "kilometers" | "km": return num * 1000
+        
+#This function converts other units to Meters. 
+def getKilometers(unit, num):
+    match unit.lower():
+        case "inch" | "inches" | "in": return num / 39.37
+        case "feet" | "feets" | "ft": return num / 3.281
+        case "yard" | "yards" | "yd": return num / 1.094
+        case "mile" | "miles": return num * 1609
+        case "micrometer" | "micrometers": return num / 1e+6
+        case "millimeter" | "millimeters" | "mm": return num / 1000
+        case "centimeter" | "centimeters" | "cm": return num / 100
+        case "meter" | "meters" | "m": return num * 1000
 
 #The following remarks are for future additions
     
