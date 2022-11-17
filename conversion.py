@@ -82,24 +82,44 @@ def getQuarts(unit, num):
         case "milliliter" | "milliliters" | "ml": return num / 946.4
         case _: print("Inproper input")
         
+#This function converts other units to degrees Fahrenheit        
 def getF(unit, num):
     match unit.lower():
         case "kelvin" | "Kelvin" | "K" | "k": return (num - 273.15) * 9/5 + 32
         case "Celcius" | "celcius" | "C" | "c": return (num * 1.8) + 32
         case _: print("Improper input")
         
+#This function converts other units to degrees Celcius        
 def getC(unit, num):
     match unit.lower():
         case "kelvin" | "Kelvin" | "K" | "k": return num - 273.15
         case "fahrenheit" | "Fahrenheit" | "F" | "f": return 5/9 * ((num)-32)
         case _: print("Improper input")
         
+#This function converts other units to degrees Kelvin        
 def getK(unit, num):
     match unit.lower():
         case "celcius" | "Celcius" | "C" | "c": return num + 273.15
         case "fahrenheit" | "Fahrenheit" | "F" | "f": return ((num)-32) * 5/9 + 273.15
         case _: print("Improper input")
 
+#This function converts other units to duckpower
+def getDuck(unit, num):
+    match unit.lower():
+        case "horsepower" | "Horsepower" | "HP" | "hp": return num * 131.2
+
+#The following remarks are for future additions
+    #This function converts other units to grams
+    #This function converts other units to milligrams
+    #This function converts other units to kilograms
+    #This function converts other units to miles
+    #This function converts other units to feet
+    #This function converts other units to inches
+    #This function converts other units to kilometers
+    #This function converts other units to meters
+    #This function converts other units to centimeters
+    #This function converts other units to millometer
+    #This function converts other units to natutical miles
 
 # Main block
 if __name__ == '__main__':
@@ -165,6 +185,12 @@ if __name__ == '__main__':
 
     elif args.unit_to == "K": # add variables to dict
         result = getK (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+    
+    elif args.unit_to == "dp": # add variables to dict
+        result = getDuck (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
