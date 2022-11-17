@@ -200,6 +200,18 @@ def getMicrometer(unit, num):
         case "meter" | "meters" | "m": return num * 1e+6
         case "kilometer" | "kilometers" | "km": return num * 1e+9
 
+#This function converts other units to Millimeter. 
+def getMillimeter(unit, num):
+    match unit.lower():
+        case "inch" | "inches" | "in": return num * 25.4
+        case "feet" | "feetss" | "ft": return num * 304.8
+        case "yard" | "yards" | "yd": return num * 914.4
+        case "mile" | "miles": return num * 1.609e+6
+        case "micrometer" | "micrometers": return num / 1000
+        case "centimeter" | "centimeters" | "cm": return num * 10
+        case "meter" | "meters" | "m": return num * 1000
+        case "kilometer" | "kilometers" | "km": return num * 1e+6
+
 #The following remarks are for future additions
     
     #This function converts other units to milligrams
