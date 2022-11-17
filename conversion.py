@@ -31,7 +31,7 @@ def getTbsp(unit, num):
         case _: print("Inproper input")
 
 #This function converts other units into Ounces. Fluid Ounces         
-def getOzs(unit, num):
+def getFloz(unit, num):
     match unit.lower():
         case "tsp": return num * .16
         case "tbsp": return num * .5
@@ -143,7 +143,7 @@ def getGrams(unit, num):
         
 
 #The following remarks are for future additions
-    #This function converts other units to grams
+    
     #This function converts other units to milligrams
     #This function converts other units to kilograms
     #This function converts other units to miles
@@ -185,8 +185,8 @@ if __name__ == '__main__':
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
 
-    elif args.unit_to in ['Ounces', 'ounces', 'oz.', 'oz']:
-        result = getOzs(args.unit_from, args.num1)
+    elif args.unit_to in ['fluidounces', 'floz', 'floz']:
+        result = getFloz(args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
@@ -235,6 +235,12 @@ if __name__ == '__main__':
         
     elif args.unit_to in ['grams', 'gram', 'Grams', 'grams', 'g', 'gm', 'gm.']:
         result = getGrams (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+        
+    elif args.unit_to in ['', 'gram', 'Grams', 'grams', 'g', 'gm', 'gm.']:
+        result = getOunces (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
