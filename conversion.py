@@ -103,33 +103,33 @@ def getOunces(unit, num):
         case "microgram" | "micrograms": return num / 2.835e+7
         case "milligram" | "ml" | "milligrams": return num / 28350
         case "gram" | "g" | "grams": return num / 28.35
-        case "kl" | "kilogram" | "kilograms": return num * 35.274
+        case "kg" | "kilogram" | "kilograms": return num * 35.274
         
 #This function converts other units to degrees Fahrenheit        
 def getF(unit, num):
     match unit.lower():
-        case "kelvin" | "Kelvin" | "K" | "k": return (num - 273.15) * 9/5 + 32
-        case "Celcius" | "celcius" | "C" | "c": return (num * 1.8) + 32
+        case "kelvin" | "k": return (num - 273.15) * 9/5 + 32
+        case "celcius" | "c": return (num * 1.8) + 32
         case _: print("Improper input")
         
 #This function converts other units to degrees Celcius        
 def getC(unit, num):
     match unit.lower():
-        case "kelvin" | "Kelvin" | "K" | "k": return num - 273.15
-        case "fahrenheit" | "Fahrenheit" | "F" | "f": return 5/9 * ((num)-32)
+        case "kelvin" | "k": return num - 273.15
+        case "fahrenheit" | "f": return 5/9 * ((num)-32)
         case _: print("Improper input")
         
 #This function converts other units to degrees Kelvin        
 def getK(unit, num):
     match unit.lower():
-        case "celcius" | "Celcius" | "C" | "c": return num + 273.15
-        case "fahrenheit" | "Fahrenheit" | "F" | "f": return ((num)-32) * 5/9 + 273.15
+        case "celcius" | "c": return num + 273.15
+        case "fahrenheit" | "f": return ((num)-32) * 5/9 + 273.15
         case _: print("Improper input")
 
 #This function converts other units to duckpower
 def getDuck(unit, num):
     match unit.lower():
-        case "horsepower" | "Horsepower" | "HP" | "hp": return num * 131.2
+        case "horsepower" | "hp": return num * 131.2
         
 #This function converts other units to grams        
 def getGrams(unit, num):
