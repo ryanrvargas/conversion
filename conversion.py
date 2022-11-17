@@ -94,16 +94,6 @@ def getGallons(unit, num):
         case "liter" | "liters" | "l": return num / 3.785
         case "milliliter" | "milliliters" | "ml": return num / 3785
         case _: print("Inproper input")
-
-#This function converts other units to ounces
-def getOunces(unit, num):
-    match unit.lower():
-        case "pounds" | "lbs" | "pound": return num * 16 
-        case "stone": return num * 224
-        case "microgram" | "micrograms": return num / 2.835e+7
-        case "milligram" | "ml" | "milligrams": return num / 28350
-        case "gram" | "g" | "grams": return num / 28.35
-        case "kg" | "kilogram" | "kilograms": return num * 35.274
         
 #This function converts other units to degrees Fahrenheit        
 def getF(unit, num):
@@ -131,6 +121,26 @@ def getDuck(unit, num):
     match unit.lower():
         case "horsepower" | "hp": return num * 131.2
         
+#This function converts other units to ounces
+def getOunces(unit, num):
+    match unit.lower():
+        case "pounds" | "lbs" | "pound": return num * 16 
+        case "stone": return num * 224
+        case "microgram" | "micrograms": return num / 2.835e+7
+        case "milligram" | "ml" | "milligrams": return num / 28350
+        case "gram" | "g" | "grams": return num / 28.35
+        case "kg" | "kilogram" | "kilograms": return num * 35.274
+        case _: print("Improper input")
+
+#This function converts other units to Pounds
+def getPounds(unit, num):
+    match unit.lower():
+        case "ounce" | "ounces" | "oz" | "ozs": return num / 16 
+        case "milligram" | "ml" | "milligrams": return num / 453600
+        case "gram" | "g" | "grams": return num / 453.6
+        case "kg" | "kilogram" | "kilograms": return num * 2.205
+        case _: print("Improper input")
+
 #This function converts other units to grams        
 def getGrams(unit, num):
     match unit.lower():
@@ -150,7 +160,8 @@ def getInches(unit, num):
         case "millimeter" | "millimeters" | "mm": return num / 25.4
         case "centimeter" | "centimeters" | "cm": return num / 2.54
         case "meter" | "meters" | "m": return num * 39.37
-        case "kilometer" | "kilometers" | "km": return num * 39370      
+        case "kilometer" | "kilometers" | "km": return num * 39370
+        case _: print("Improper input")
 
 #This function converts other units to Feet.        
 def getFeet(unit, num):
@@ -163,6 +174,7 @@ def getFeet(unit, num):
         case "centimeter" | "centimeters" | "cm": return num / 30.48
         case "meter" | "meters" | "m": return num * 3.281
         case "kilometer" | "kilometers" | "km": return num * 3281  
+        case _: print("Improper input")
 
 #This function converts other units to Yards.        
 def getYards(unit, num):
@@ -175,6 +187,7 @@ def getYards(unit, num):
         case "centimeter" | "centimeters" | "cm": return num / 91.44
         case "meter" | "meters" | "m": return num * 1.094
         case "kilometer" | "kilometers" | "km": return num * 1094  
+        case _: print("Improper input")
 
 #This function converts other units to Yards.        
 def getMiles(unit, num):
@@ -187,6 +200,7 @@ def getMiles(unit, num):
         case "centimeter" | "centimeters" | "cm": return num / 160900
         case "meter" | "meters" | "m": return num / 1609
         case "kilometer" | "kilometers" | "km": return num / 1.609
+        case _: print("Improper input")
 
 #This function converts other units to Micrometer. 
 def getMicrometers(unit, num):
@@ -199,6 +213,7 @@ def getMicrometers(unit, num):
         case "centimeter" | "centimeters" | "cm": return num * 10000
         case "meter" | "meters" | "m": return num * 1e+6
         case "kilometer" | "kilometers" | "km": return num * 1e+9
+        case _: print("Improper input")
 
 #This function converts other units to Millimeter. 
 def getMillimeters(unit, num):
@@ -211,6 +226,7 @@ def getMillimeters(unit, num):
         case "centimeter" | "centimeters" | "cm": return num * 10
         case "meter" | "meters" | "m": return num * 1000
         case "kilometer" | "kilometers" | "km": return num * 1e+6
+        case _: print("Improper input")
         
 #This function converts other units to Centimeters. 
 def getCentimeters(unit, num):
@@ -223,6 +239,7 @@ def getCentimeters(unit, num):
         case "millimeter" | "millimeters" | "mm": return num / 10
         case "meter" | "meters" | "m": return num * 100
         case "kilometer" | "kilometers" | "km": return num * 100000
+        case _: print("Improper input")
         
 #This function converts other units to Meters. 
 def getMeters(unit, num):
@@ -235,6 +252,7 @@ def getMeters(unit, num):
         case "millimeter" | "millimeters" | "mm": return num / 1000
         case "centimeter" | "centimeters" | "cm": return num / 100
         case "kilometer" | "kilometers" | "km": return num * 1000
+        case _: print("Improper input")
         
 #This function converts other units to Meters. 
 def getKilometers(unit, num):
@@ -247,6 +265,7 @@ def getKilometers(unit, num):
         case "millimeter" | "millimeters" | "mm": return num / 1e+6
         case "centimeter" | "centimeters" | "cm": return num / 100000
         case "meter" | "meters" | "m": return num / 1000
+        case _: print("Improper input")
 
 #The following remarks are for future additions
     
