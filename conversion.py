@@ -82,6 +82,19 @@ def getQuarts(unit, num):
         case "milliliter" | "milliliters" | "ml": return num / 946.4
         case _: print("Inproper input")
 
+#This function converts other units into Gallons.
+def getGallons(unit, num):
+    match unit.lower():
+        case "tsp": return num / 768
+        case "tbsp": return num / 256
+        case "ounce" | "ounces": return num / 128
+        case "cup" | "cups": return num / 15.772
+        case "pint" | "pints": return num / 8
+        case "quart" | "quarts" | "qt": return num / 4
+        case "liter" | "liters" | "l": return num / 3.785
+        case "milliliter" | "milliliters" | "ml": return num / 3785
+        case _: print("Inproper input")
+
 #This function converts other units to ounces
 def getOunces(unit, num):
     match unit.lower():
@@ -132,11 +145,7 @@ def getDuck(unit, num):
     #This function converts other units to natutical miles
     #liters
     #mL
-    #fl oz
     #cu
-    #ton
-    #metric ton
-    #short ton
     #acre/hectare/ sqmi
     
 # Main block
