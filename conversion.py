@@ -416,34 +416,35 @@ if __name__ == '__main__':
         result = getMicrometers (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
         
     elif args.unit_to in ['Millimeters', 'millimeters', 'Millimeter', 'millimeter', 'mm', 'mm.']:
         result = getMillimeters (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
-        rprint(f'The result is {result_y} {args.unit_to}.')
+       
         
     elif args.unit_to in ['Centimeters', 'centimeters', 'Centimeter', 'centimeter', 'cm', 'cm.']:
         result = getCentimeters (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
-        rprint(f'The result is {result_y} {args.unit_to}.')
+        
     
     elif args.unit_to in ['Meters', 'Meter', 'Metre', 'metre', 'Metres', 'metres', 'meters', 'meter', 'm', 'm.']:
         result = getMeters (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
-        rprint(f'The result is {result_y} {args.unit_to}.')
+        
         
     elif args.unit_to in ['Kilometers', 'kilometers', 'Kilometer', 'kilometer', 'km', 'km.']:
         result = getKilometers (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
-        rprint(f'The result is {result_y} {args.unit_to}.')    
+           
     
     else:
         print("Not a valid conversion or unit not currently supported.")
