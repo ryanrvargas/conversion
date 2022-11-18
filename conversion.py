@@ -283,13 +283,7 @@ def getKilometers(unit, num):
         case "meter" | "meters" | "m": return num / 1000
         case _: print("Improper input")
 
-#The following remarks are for future additions
-    #This function converts other units to natutical miles
-    #liters
-    #mL
-    #cu
-    #acre/hectare/ sqmi
-    
+ 
 # Main block
 if __name__ == '__main__':
     parser = parser = argparse.ArgumentParser()
@@ -430,9 +424,26 @@ if __name__ == '__main__':
         rprint(f'The result is {result_y} {args.unit_to}.')
         rprint(f'The result is {result_y} {args.unit_to}.')
         
+    elif args.unit_to in ['Centimeters', 'centimeters', 'Centimeter', 'centimeter', 'cm', 'cm.']:
+        result = getCentimeters (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+        rprint(f'The result is {result_y} {args.unit_to}.')
     
+    elif args.unit_to in ['Meters', 'Meter', 'Metre', 'metre', 'Metres', 'metres', 'meters', 'meter', 'm', 'm.']:
+        result = getMeters (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+        rprint(f'The result is {result_y} {args.unit_to}.')
         
-    
+    elif args.unit_to in ['Kilometers', 'kilometers', 'Kilometer', 'kilometer', 'km', 'km.']:
+        result = getKilometers (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+        rprint(f'The result is {result_y} {args.unit_to}.')    
     
     else:
-        print("Not a valid conversion")
+        print("Not a valid conversion or unit not currently supported.")
