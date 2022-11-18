@@ -382,7 +382,13 @@ if __name__ == '__main__':
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
     
-    
+    elif args.unit_to in ['Milligrams', 'milliograms', 'mg', 'mg.']:
+        result = getMilligrams (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+        
+        
     
     
     else:
