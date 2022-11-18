@@ -411,6 +411,28 @@ if __name__ == '__main__':
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.') 
+        
+    elif args.unit_to in ['Miles', 'Mile', 'miles', 'mile', 'mi', 'mi.']:
+        result = getMiles (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+        
+    elif args.unit_to in ['Micrometers', 'micrometers', 'micron']:
+        result = getMicrometers (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        
+    elif args.unit_to in ['Millimeters', 'millimeters', 'Millimeter', 'millimeter', 'mm', 'mm.']:
+        result = getMillimeters (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+        rprint(f'The result is {result_y} {args.unit_to}.')
+        
+    
+        
+    
     
     else:
         print("Not a valid conversion")
