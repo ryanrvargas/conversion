@@ -369,12 +369,21 @@ if __name__ == '__main__':
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
-        
-    elif args.unit_to in ['', 'gram', 'Grams', 'grams', 'g', 'gm', 'gm.']:
+    
+    elif args.unit_to in ['Ounces', 'ounces', 'oz', 'ozs']:
         result = getOunces (args.unit_from, args.num1)
         result_x = decimal.Decimal(result)
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
+        
+    elif args.unit_to in ['pounds', 'Pounds', 'pound', 'Pound', 'lb', 'lbs']:
+        result = getPounds (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')
+    
+    
+    
     
     else:
         print("Not a valid conversion")
