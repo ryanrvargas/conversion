@@ -139,7 +139,7 @@ def getPounds(unit, num):
         case "kg" | "kilogram" | "kilograms": return num * 2.205
         case _: print("Improper input")
 
-#This function converts other units to grams        
+#This function converts other units to milligrams        
 def getMilligrams(unit, num):
     match unit.lower():
         case "kilograms" | "kilogram" | "kg": return num * 1e+6
@@ -157,7 +157,7 @@ def getGrams(unit, num):
         case "ounces" | "ounces" | "oz" | "ozs" | "oz.": return num * 28.35
         case _: print("Improper input")
 
-#This function converts other units to grams        
+#This function converts other units to kilograms        
 def getKilograms(unit, num):
     match unit.lower():
         case "gram" | "grams" | "g": return num / 1000
@@ -388,8 +388,29 @@ if __name__ == '__main__':
         result_y = result_x.quantize(decimal.Decimal('0.00'))
         rprint(f'The result is {result_y} {args.unit_to}.')
         
-        
+    elif args.unit_to in ['Kilograms', 'kilograms', 'kg']:
+        result = getKilograms (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')    
     
+    elif args.unit_to in ['Inches', 'inches', 'in', 'in.']:
+        result = getInches (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.') 
+        
+    elif args.unit_to in ['Feet', 'feet', 'ft', 'ft.']:
+        result = getFeet (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.')    
+    
+    elif args.unit_to in ['Yards', 'yards', 'yd', 'yds', 'yd.', 'yds.']:
+        result = getYards (args.unit_from, args.num1)
+        result_x = decimal.Decimal(result)
+        result_y = result_x.quantize(decimal.Decimal('0.00'))
+        rprint(f'The result is {result_y} {args.unit_to}.') 
     
     else:
         print("Not a valid conversion")
